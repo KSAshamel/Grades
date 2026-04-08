@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>حاسبة نقاط الترقية</title>
+<style>
+  body { font-family: Arial; direction: rtl; padding: 20px; }
+  input { margin: 5px 0; padding: 8px; width: 200px; }
+  button { padding: 10px 20px; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>حاسبة نقاط الترقية</h2>
+
+<label>تقييم الأداء الوظيفي (من 100):</label><br>
+<input id="performance" type="number"><br>
+
+<label>ساعات التطوع (من 100):</label><br>
+<input id="volunteer" type="number"><br>
+
+<label>الدورات والتدريب (من 100):</label><br>
+<input id="training" type="number"><br>
+
+<label>اختبار القدرات (من 100):</label><br>
+<input id="exam" type="number"><br>
+
+<button onclick="calculate()">احسب النقاط</button>
+
+<h3 id="result"></h3>
+
+<script>
+function calculate() {
+    let performance = Number(document.getElementById("performance").value);
+    let volunteer   = Number(document.getElementById("volunteer").value);
+    let training    = Number(document.getElementById("training").value);
+    let exam        = Number(document.getElementById("exam").value);
+
+    let total =
+        (performance * 0.40) +
+        (volunteer   * 0.15) +
+        (training    * 0.20) +
+        (exam        * 0.25);
+
+    document.getElementById("result").innerText =
+        "مجموع نقاط الترقية: " + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
