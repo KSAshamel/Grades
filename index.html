@@ -2,32 +2,110 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>حاسبة نقاط الترقية</title>
+
 <style>
-  body { font-family: Arial; direction: rtl; padding: 20px; }
-  input { margin: 5px 0; padding: 8px; width: 200px; }
-  button { padding: 10px 20px; margin-top: 10px; }
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Tajawal", sans-serif;
+        background: #0f0f0f;
+        color: #fff;
+        direction: rtl;
+    }
+
+    .container {
+        max-width: 420px;
+        margin: 40px auto;
+        padding: 25px;
+        background: #1a1a1a;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #f5f5f5;
+    }
+
+    label {
+        font-size: 15px;
+        margin-bottom: 6px;
+        display: block;
+        color: #dcdcdc;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border: none;
+        border-radius: 12px;
+        background: #2a2a2a;
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    input:focus {
+        background: #333;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #4b79ff, #6a4bff);
+        border: none;
+        border-radius: 14px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:active {
+        transform: scale(0.97);
+        opacity: 0.9;
+    }
+
+    #result {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        color: #4b79ff;
+    }
 </style>
 </head>
+
 <body>
 
-<h2>حاسبة نقاط الترقية</h2>
+<div class="container">
+    <h2>حاسبة نقاط الترقية</h2>
 
-<label>تقييم الأداء الوظيفي (من 100):</label><br>
-<input id="performance" type="number"><br>
+    <label>تقييم الأداء الوظيفي (من 100)</label>
+    <input id="performance" type="number">
 
-<label>ساعات التطوع (من 100):</label><br>
-<input id="volunteer" type="number"><br>
+    <label>ساعات التطوع (من 100)</label>
+    <input id="volunteer" type="number">
 
-<label>الدورات والتدريب (من 100):</label><br>
-<input id="training" type="number"><br>
+    <label>الدورات والتدريب (من 100)</label>
+    <input id="training" type="number">
 
-<label>اختبار القدرات (من 100):</label><br>
-<input id="exam" type="number"><br>
+    <label>اختبار القدرات (من 100)</label>
+    <input id="exam" type="number">
 
-<button onclick="calculate()">احسب النقاط</button>
+    <button onclick="calculate()">احسب النقاط</button>
 
-<h3 id="result"></h3>
+    <div id="result"></div>
+</div>
 
 <script>
 function calculate() {
